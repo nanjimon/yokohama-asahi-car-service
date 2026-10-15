@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#06265F">
   <title>横浜旭カーサービス｜横浜市旭区発の出張カーサービス</title>
   <style>
-    :root{--ink:#06265F;--ink2:#0B3273;--paper:#F7F8FC;--white:#fff;--gold:#FFD400;--gold2:#FFE56B;--muted:#5D6B7C;--line:#E0E5EE;--radius:22px;--shadow:0 18px 48px rgba(6,38,95,.14)}
+    :root{--ink:#103D73;--ink2:#1459A6;--paper:#F6FBFF;--white:#fff;--gold:#FFD52A;--gold2:#FFEA8A;--red:#E62938;--muted:#5B6F83;--line:#D8E8F5;--radius:22px;--shadow:0 16px 40px rgba(13,75,140,.12)}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:86px}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
@@ -21,42 +21,52 @@
     nav{display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:750}
     nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:#795d00}
     .nav-cta{background:var(--gold);color:var(--ink);padding:10px 17px;border-radius:999px}
-    .hero{background:var(--ink);color:#fff;overflow:hidden}
+    .hero{background:linear-gradient(125deg,#fff 0%,#f3faff 56%,#e5f4ff 100%);color:var(--ink);overflow:hidden}
     .hero-grid{min-height:550px;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
     .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:76px 40px 76px max(32px,calc((100vw - 1120px)/2))}
     .eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:850;font-size:.88rem;letter-spacing:.09em}
     .eyebrow:before{content:"";width:30px;height:3px;border-radius:2px;background:currentColor}
     h1{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-.045em;line-height:1.12;margin:20px 0}
-    h1 span{color:var(--gold)}
-    .lead{max-width:35em;color:#d5dce3;font-size:1.08rem;margin:0 0 28px}
+    h1 span{color:var(--red)}
+    .lead{max-width:35em;color:#425c76;font-size:1.08rem;margin:0 0 28px}
     .actions{display:flex;flex-wrap:wrap;gap:12px}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:850;border:0;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 12px 28px #FFD40030}
-    .btn-secondary{background:transparent;border:1px solid #ffffff45;color:#fff}
-    .hero-art{position:relative;min-height:460px;display:grid;place-items:center;background:radial-gradient(ellipse at 70% 45%,#183E7A 0,#0B3273 42%,#06265F 78%)}
-    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff18;border-radius:50%;width:min(40vw,460px);aspect-ratio:1}
+    .btn-secondary{background:#fff;border:1px solid #c6d9eb;color:var(--ink)}
+    .hero-art{position:relative;min-height:460px;display:grid;place-items:center;background:radial-gradient(ellipse at 70% 45%,#d8eeff 0,#eaf6ff 44%,#f5fbff 82%)}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #1459A622;border-radius:50%;width:min(40vw,460px);aspect-ratio:1}
     .hero-art:after{width:min(29vw,330px)}
     .car-illustration{position:relative;width:min(92%,520px);z-index:1;filter:drop-shadow(0 22px 24px #0007)}
-    .art-label{position:absolute;bottom:28px;right:7%;z-index:2;background:#06265Fcc;border:1px solid #ffffff30;color:#fff;padding:8px 14px;border-radius:999px;font-size:.78rem;font-weight:750}
+    .art-label{position:absolute;bottom:28px;right:7%;z-index:2;background:#fff;border:1px solid #c6d9eb;color:var(--ink);padding:8px 14px;border-radius:999px;font-size:.78rem;font-weight:750}
     section{padding:86px 0}
-    .kicker{color:#8a6510;font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin-bottom:8px}
+    .kicker{color:var(--ink2);font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin-bottom:8px}
     h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.035em;line-height:1.2;margin:0 0 14px}
     .intro{max-width:680px;color:var(--muted);font-size:1.02rem;margin:0 0 34px}
+    .work-section{padding:64px 0;background:linear-gradient(180deg,#EAF6FF 0%,#fff 100%)}
+    .work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .work-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .work-photo{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e5f4ff}
+    .work-photo img{display:block;width:100%;height:100%;object-fit:cover}
+    .photo-label{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--ink);padding:5px 12px;border-radius:999px;font-size:.82rem;font-weight:850}
+    .work-copy{padding:20px 24px}
+    .work-copy h3{font-size:1.15rem;margin:0 0 6px}
+    .work-copy p{color:var(--muted);font-size:.92rem;margin:0}
+    .work-disclaimer{color:var(--muted);font-size:.82rem;margin:16px 0 0}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 8px 26px #06265F08;display:flex;flex-direction:column}
-    .icon{width:48px;height:48px;background:#FFF4BF;color:#17396B;border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
+    .card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--ink2);border-radius:var(--radius);padding:26px;box-shadow:0 8px 26px #06265F08;display:flex;flex-direction:column}
+    .icon{width:48px;height:48px;background:#FFF4BF;color:var(--ink2);border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
     .icon svg{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .card h3{font-size:1.18rem;line-height:1.4;margin:0 0 9px}
     .card p{color:var(--muted);font-size:.94rem;margin:0 0 17px}
     .price{border-top:1px solid var(--line);padding-top:14px;margin-top:auto;display:flex;align-items:baseline;gap:8px;font-weight:850}
-    .price strong{font-size:1.65rem;letter-spacing:-.04em}.price small,.price-note{color:var(--muted);font-size:.82rem;font-weight:650}
+    .price strong{font-size:1.65rem;letter-spacing:-.04em;color:var(--red)}.price small,.price-note{color:var(--muted);font-size:.82rem;font-weight:650}
     .price-note{margin:0 0 12px!important}
     .notice{margin-top:22px;padding:15px 18px;background:#FFF8D8;border-left:4px solid var(--gold);border-radius:9px;color:#293A5B;font-size:.92rem}
-    .dark{background:var(--ink);color:#fff}.dark .kicker{color:var(--gold)}.dark .intro{color:#D1DAEA}
+    .dark{background:#EAF6FF;color:var(--ink)}.dark .kicker{color:var(--ink2)}.dark .intro{color:#58728B}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:38px}
-    .step{position:relative}.step-number{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:950;margin-bottom:15px}
-    .step h3{font-size:1.04rem;margin:0 0 5px}.step p{font-size:.9rem;color:#CED8EA;margin:0}
+    .step{position:relative}.step-number{width:46px;height:46px;border-radius:50%;background:var(--ink2);color:#fff;display:grid;place-items:center;font-weight:950;margin-bottom:15px}
+    .step h3{font-size:1.04rem;margin:0 0 5px}.step p{font-size:.9rem;color:#516A83;margin:0}
     .area-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px}
     .area-title{font-size:1.45rem;font-weight:900;margin:0 0 8px}.area-panel p{color:var(--muted);margin:0}
     .area-points{display:grid;gap:12px}.area-point{display:flex;gap:11px;align-items:flex-start;color:#3B4A62}.tick{color:#1b7656;font-weight:950}
@@ -74,7 +84,7 @@
     summary{font-weight:850;cursor:pointer}details p{color:var(--muted);margin:10px 0 0;font-size:.94rem}
     footer{background:#041A43;color:#D0D9EA;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-row strong{color:#fff}.footer-row small{font-size:.8rem}
     @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:62px 28px 42px}.hero-art{min-height:320px}.hero-art:before{width:72vw}.hero-art:after{width:52vw}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
-    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:52px 22px 36px}h1{font-size:2.6rem}.hero-art{min-height:275px}.art-label{bottom:14px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:52px 22px 36px}h1{font-size:2.6rem}.hero-art{min-height:275px}.art-label{bottom:14px}.cards,.steps,.form-preview,.work-grid{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   </style>
 </head>
@@ -106,6 +116,18 @@
           </svg>
           <span class="art-label">ご自宅の駐車場で作業</span>
         </div>
+      </div>
+    </section>
+
+    <section class="work-section" id="work">
+      <div class="wrap">
+        <div class="kicker">Work photos</div><h2>作業中の様子</h2>
+        <p class="intro">オイル交換と、ホイール付きタイヤの脱着作業のイメージです。</p>
+        <div class="work-grid">
+          <article class="work-card"><div class="work-photo"><img src="assets/oil-change-work.jpg" alt="エンジンオイル交換の作業イメージ" loading="lazy" decoding="async"><span class="photo-label">作業イメージ</span></div><div class="work-copy"><h3>エンジンオイル交換</h3><p>オイルチェンジャーを使った交換作業。</p></div></article>
+          <article class="work-card"><div class="work-photo"><img src="assets/tire-change-work.jpg" alt="ホイール付きタイヤを脱着する作業イメージ" loading="lazy" decoding="async"><span class="photo-label">作業イメージ</span></div><div class="work-copy"><h3>ホイール付きタイヤの脱着</h3><p>夏タイヤ・冬タイヤの履き替え作業。</p></div></article>
+        </div>
+        <p class="work-disclaimer">※掲載写真は作業イメージです。実際の作業写真ではありません。</p>
       </div>
     </section>
 
