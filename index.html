@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="横浜市旭区発の出張カーサービス。エンジンオイル交換、バッテリー交換、タイヤ交換、洗車などのお車の軽作業をご自宅の駐車場で行います。夜間もご相談ください。">
+  <meta name="theme-color" content="#111923">
+  <title>横浜旭カーサービス｜横浜市旭区発の出張カーサービス</title>
+  <style>
+    :root{--ink:#111923;--ink2:#1c2835;--paper:#f4f5f6;--white:#fff;--gold:#f6c747;--gold2:#ffe08a;--muted:#69727d;--line:#e1e5e9;--radius:22px;--shadow:0 18px 48px rgba(17,25,35,.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.75}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(17,25,35,.96);color:#fff;border-bottom:1px solid #ffffff20;backdrop-filter:blur(12px)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:850;letter-spacing:.02em}
+    .brand-mark{width:35px;height:35px;border:6px solid var(--gold);border-radius:50%;box-shadow:inset 0 0 0 4px var(--ink);flex:none}
+    .brand small{display:block;color:#c8d0d8;font-size:.69rem;font-weight:650;line-height:1.25;letter-spacing:.08em}
+    nav{display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:750}
+    nav a{text-decoration:none;color:#eef1f4}nav a:hover{color:var(--gold)}
+    .nav-cta{background:var(--gold);color:var(--ink);padding:10px 17px;border-radius:999px}
+    .hero{background:var(--ink);color:#fff;overflow:hidden}
+    .hero-grid{min-height:550px;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
+    .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:76px 40px 76px max(32px,calc((100vw - 1120px)/2))}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:850;font-size:.88rem;letter-spacing:.09em}
+    .eyebrow:before{content:"";width:30px;height:3px;border-radius:2px;background:currentColor}
+    h1{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-.045em;line-height:1.12;margin:20px 0}
+    h1 span{color:var(--gold)}
+    .lead{max-width:35em;color:#d5dce3;font-size:1.08rem;margin:0 0 28px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:850;border:0;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 12px 28px #f6c74730}
+    .btn-secondary{background:transparent;border:1px solid #ffffff45;color:#fff}
+    .hero-art{position:relative;min-height:460px;display:grid;place-items:center;background:radial-gradient(ellipse at 70% 45%,#354251 0,#202b38 42%,#111923 78%)}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff18;border-radius:50%;width:min(40vw,460px);aspect-ratio:1}
+    .hero-art:after{width:min(29vw,330px)}
+    .car-illustration{position:relative;width:min(92%,520px);z-index:1;filter:drop-shadow(0 22px 24px #0007)}
+    .art-label{position:absolute;bottom:28px;right:7%;z-index:2;background:#111923cc;border:1px solid #ffffff30;color:#fff;padding:8px 14px;border-radius:999px;font-size:.78rem;font-weight:750}
+    section{padding:86px 0}
+    .kicker{color:#8a6510;font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin-bottom:8px}
+    h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.035em;line-height:1.2;margin:0 0 14px}
+    .intro{max-width:680px;color:var(--muted);font-size:1.02rem;margin:0 0 34px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 8px 26px #11192308;display:flex;flex-direction:column}
+    .icon{width:48px;height:48px;background:#fff3c8;color:#745400;border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
+    .icon svg{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .card h3{font-size:1.18rem;line-height:1.4;margin:0 0 9px}
+    .card p{color:var(--muted);font-size:.94rem;margin:0 0 17px}
+    .price{border-top:1px solid var(--line);padding-top:14px;margin-top:auto;display:flex;align-items:baseline;gap:8px;font-weight:850}
+    .price strong{font-size:1.65rem;letter-spacing:-.04em}.price small,.price-note{color:var(--muted);font-size:.82rem;font-weight:650}
+    .price-note{margin:0 0 12px!important}
+    .notice{margin-top:22px;padding:15px 18px;background:#fff7dc;border-left:4px solid var(--gold);border-radius:9px;color:#55461e;font-size:.92rem}
+    .dark{background:var(--ink);color:#fff}.dark .kicker{color:var(--gold)}.dark .intro{color:#c5cdd6}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:38px}
+    .step{position:relative}.step-number{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:950;margin-bottom:15px}
+    .step h3{font-size:1.04rem;margin:0 0 5px}.step p{font-size:.9rem;color:#c2cbd4;margin:0}
+    .area-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+    .area-title{font-size:1.45rem;font-weight:900;margin:0 0 8px}.area-panel p{color:var(--muted);margin:0}
+    .area-points{display:grid;gap:12px}.area-point{display:flex;gap:11px;align-items:flex-start;color:#414b56}.tick{color:#1b7656;font-weight:950}
+    .booking{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:clamp(24px,5vw,46px)}
+    .booking-status{display:flex;align-items:center;gap:10px;background:#fff7dc;border:1px solid #f2dda0;border-radius:12px;padding:13px 15px;color:#5d4b18;font-weight:750;margin:24px 0 0}
+    .status-dot{width:10px;height:10px;background:#d99b13;border-radius:50%;flex:none}
+    .form-preview{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+    .field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.9rem;font-weight:800}
+    .field input,.field select,.field textarea{width:100%;min-height:48px;padding:11px 13px;border:1px solid #cbd1d8;border-radius:10px;background:#fff;color:var(--ink);font:inherit}
+    .field textarea{min-height:96px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:3px solid #f6c74760;border-color:#a67809}
+    .form-footnote{color:var(--muted);font-size:.86rem;margin:12px 0 0}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
+    summary{font-weight:850;cursor:pointer}details p{color:var(--muted);margin:10px 0 0;font-size:.94rem}
+    footer{background:#0a1017;color:#c4cbd2;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-row strong{color:#fff}.footer-row small{font-size:.8rem}
+    @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:62px 28px 42px}.hero-art{min-height:320px}.hero-art:before{width:72vw}.hero-art:after{width:52vw}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:52px 22px 36px}h1{font-size:2.6rem}.hero-art{min-height:275px}.art-label{bottom:14px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="横浜旭カーサービス トップへ"><span class="brand-mark" aria-hidden="true"></span><span><small>横浜市旭区発の出張カーサービス</small>横浜旭カーサービス</span></a>
+      <nav aria-label="メインメニュー"><a href="#services">サービス・料金</a><a href="#flow">ご依頼の流れ</a><a href="#area">出張エリア</a><a class="nav-cta" href="#booking">予約申し込み</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">横浜市旭区発の出張カーサービス</div>
+          <h1>車の軽作業を、<br><span>ご自宅で。</span></h1>
+          <p class="lead">店舗の予約が取りづらいときや、在宅ワーク中、休日のお出かけ前に。ご自宅などの駐車場へ伺い、オイル交換やタイヤ交換を行います。夜間もご相談ください。</p>
+          <div class="actions"><a class="btn btn-primary" href="#booking">予約申し込み</a><a class="btn btn-secondary" href="#services">サービス・料金を見る</a></div>
+        </div>
+        <div class="hero-art" aria-label="車のイラスト">
+          <svg class="car-illustration" viewBox="0 0 620 340" role="img" aria-labelledby="car-title">
+            <title id="car-title">出張作業の車のイメージ</title>
+            <path d="M108 221h414l-20-67c-6-20-20-34-40-39l-84-19-51-55c-13-14-30-21-50-21H197c-20 0-37 9-48 25l-50 70-26 16c-11 7-18 20-18 34v34c0 13 10 22 23 22h30" fill="#f6c747" stroke="#fff0b4" stroke-width="7" stroke-linejoin="round"/>
+            <path d="m121 141 45-64c7-10 18-16 31-16h60v80H121Zm158-80h5c13 0 24 5 33 15l57 65H279V61Z" fill="#b9d5e7" stroke="#111923" stroke-width="7" stroke-linejoin="round"/>
+            <path d="M75 181h433" stroke="#111923" stroke-width="7" stroke-linecap="round"/><path d="M100 208h-40" stroke="#fff0b4" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="174" cy="226" r="44" fill="#111923" stroke="#f7f8fa" stroke-width="8"/><circle cx="174" cy="226" r="18" fill="#c8d0d8"/>
+            <circle cx="449" cy="226" r="44" fill="#111923" stroke="#f7f8fa" stroke-width="8"/><circle cx="449" cy="226" r="18" fill="#c8d0d8"/>
+            <path d="M284 105h76" stroke="#ffffff" stroke-opacity=".75" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+          <span class="art-label">ご自宅の駐車場で作業</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="kicker">Service &amp; price</div><h2>サービス・料金</h2>
+        <p class="intro">横浜市旭区発。車の軽作業を出張で行います。料金は作業前にご案内します。</p>
+        <div class="cards">
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3C13.5 8 7 14.3 7 20a9 9 0 0 0 18 0c0-5.7-6.5-12-9-17Z"/><path d="M12 21.5c.5 1.7 1.8 2.7 3.6 3"/></svg></div><h3>エンジンオイル交換</h3><p>軽自動車・小型乗用車のみ対応。基本上抜きで行います。下抜き作業になった場合も、養生をしっかり行います。オイルフィルター交換とフラッシング作業はありません。</p><div class="price"><strong>3,000円〜</strong><small>車種・油種により変動</small></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="9" width="22" height="16" rx="2"/><path d="M10 9V6h4v3M19 9V6h4v3M10 17h6M13 14v6M20 17h4"/></svg></div><h3>バッテリー交換・ジャンプスタート</h3><p>持込みバッテリーの交換、取り外したバッテリーの処分、バッテリー上がり時のジャンプスタートに対応します。</p><div class="price"><strong>3,000円〜</strong><small>交換時は廃棄込み</small></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4"/><path d="M16 5v7M16 20v7M5 16h7M20 16h7"/></svg></div><h3>夏↔︎冬タイヤ交換</h3><p>ホイール付きタイヤの脱着。摩耗状況を見てローテーションも致します。</p><div class="price"><strong>3,000円</strong><small>4本</small></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4"/><path d="M16 5v7M16 20v7M5 16h7M20 16h7"/></svg></div><h3>タイヤ交換（組み換え）</h3><p>タイヤとホイールの組み換え、バランス調整、廃タイヤ処理を行います。タイヤはお預かりして作業し、納品時にお車へ付け替えます。</p><p class="price-note">※16インチまで。偏平率の低いタイヤ、引っ張りタイヤは不可。</p><div class="price"><strong>8,000円〜</strong></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 9a10 10 0 0 1 16 2M23 6l1 5-5-1M24 23a10 10 0 0 1-16-2M9 26l-1-5 5 1"/></svg></div><h3>タイヤローテーション</h3><p>前後のタイヤ位置を入れ替え、偏った摩耗を抑えます。</p><div class="price"><strong>3,000円</strong></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 20c4 3 12 3 16 0M10 17c3 2 9 2 12 0M12 14c2 1 6 1 8 0M7 24h18M11 9h10"/></svg></div><h3>洗車</h3><p>ご自宅や指定場所での簡易洗車。内容はご相談ください。</p><div class="price"><strong>要相談</strong></div></article>
+        </div>
+        <div class="notice"><strong>タイヤ作業について：</strong>タイヤの組み換え、パンク修理などは要相談です。安全に作業できる平坦な駐車場所をご用意ください。</div>
+      </div>
+    </section>
+
+    <section class="dark" id="flow">
+      <div class="wrap"><div class="kicker">How it works</div><h2>ご依頼の流れ</h2><p class="intro">予約申し込み後、内容を確認して日時をご連絡します。申し込み時点では予約確定になりません。</p>
+        <div class="steps">
+          <article class="step"><div class="step-number">1</div><h3>申し込み</h3><p>作業内容・車種・地域・希望日時を送信。</p></article>
+          <article class="step"><div class="step-number">2</div><h3>内容確認</h3><p>作業可否、駐車環境、料金を確認します。</p></article>
+          <article class="step"><div class="step-number">3</div><h3>日時確定</h3><p>返信で日時と料金を確認して予約確定。</p></article>
+          <article class="step"><div class="step-number">4</div><h3>現地で作業</h3><p>安全を確認し、ご指定場所で作業します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="area"><div class="wrap"><div class="kicker">Service area</div><h2>出張エリア</h2><p class="intro">横浜市旭区を中心に、近隣地域へ伺います。</p>
+      <div class="area-panel"><div><div class="area-title">横浜市旭区・近隣地域</div><p>ご住所は町名までで構いません。出張先の詳細は予約申し込み後に確認します。</p></div><div class="area-points"><div class="area-point"><span class="tick">✓</span><span>夜間もご相談いただけます。</span></div><div class="area-point"><span class="tick">✓</span><span>作業場所は安全に作業できる平坦な駐車場が必要です。</span></div><div class="area-point"><span class="tick">✓</span><span>車種や状態により、お受けできない場合があります。</span></div></div></div>
+    </div></section>
+
+    <section id="booking"><div class="wrap booking"><div class="kicker">Appointment request</div><h2>予約申し込み</h2><p class="intro">希望日時をお知らせいただき、内容確認後に返信で予約を確定します。</p>
+      <div class="booking-status"><span class="status-dot" aria-hidden="true"></span><span>受付フォームの接続準備中です。フォームの送信先を設定してから公開します。</span></div>
+      <div class="form-preview" aria-label="予約申し込みでお伺いする項目のプレビュー">
+        <div class="field"><label for="name">お名前</label><input id="name" placeholder="例：山田" disabled></div>
+        <div class="field"><label for="reply">返信先（メールアドレスなど）</label><input id="reply" placeholder="返信を受け取れる連絡先" disabled></div>
+        <div class="field"><label for="bookingArea">作業場所（町名まで）</label><input id="bookingArea" placeholder="例：横浜市旭区二俣川" disabled></div>
+        <div class="field"><label for="car">車種</label><input id="car" placeholder="例：ダイハツ タント" disabled></div>
+        <div class="field"><label for="service">希望作業</label><select id="service" disabled><option>選択してください</option><option>エンジンオイル交換</option><option>バッテリー交換</option><option>ジャンプスタート</option><option>夏↔︎冬タイヤ交換</option><option>タイヤ交換（組み換え）</option><option>タイヤローテーション</option><option>洗車</option></select></div>
+        <div class="field"><label for="date">希望日時（第1希望）</label><input id="date" placeholder="例：10月20日 午前" disabled></div>
+        <div class="field full"><label for="note">補足（任意）</label><textarea id="note" placeholder="タイヤサイズ、部品の準備状況など" disabled></textarea></div>
+      </div>
+      <p class="form-footnote">送信先は後から追加できます。Googleフォームなど、申し込みを受け取る方法を設定してから受付を開始します。</p>
+    </div></section>
+
+    <section><div class="wrap"><div class="kicker">FAQ</div><h2>よくある質問</h2><div class="faq">
+      <details><summary>申し込んだ時点で予約確定ですか？</summary><p>申し込み後に内容と日時を確認し、返信をもって予約確定となります。</p></details>
+      <details><summary>自宅以外でも作業できますか？</summary><p>安全に作業できる平坦な駐車場所であればご相談いただけます。</p></details>
+      <details><summary>エンジンオイル交換はどんな車でもできますか？</summary><p>軽自動車・小型乗用車のみ対応します。オイルフィルター交換とフラッシング作業は行いません。</p></details>
+      <details><summary>タイヤ組み換えはどんなサイズでもできますか？</summary><p>16インチまでです。偏平率の低いタイヤ、引っ張りタイヤは対応できません。</p></details>
+    </div></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><strong>横浜旭カーサービス</strong><small>横浜市旭区発の出張カーサービス</small></div></footer>
+</body>
+</html>
