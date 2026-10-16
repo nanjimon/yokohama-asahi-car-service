@@ -65,7 +65,7 @@
     .booking{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:clamp(24px,5vw,46px)}
     .booking-status{display:flex;align-items:center;gap:10px;background:#FFF8D8;border:1px solid #E8D36E;border-radius:12px;padding:13px 15px;color:#2C3D5E;font-weight:750;margin:24px 0 0}
     .status-dot{width:10px;height:10px;background:#D1A900;border-radius:50%;flex:none}
-    .form-preview{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.vehicle-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}.vehicle-fields .field{min-width:0}.field[hidden]{display:none}
+    .form-preview{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.vehicle-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%}.vehicle-fields .field{min-width:0}.field[hidden]{display:none}
     .field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.9rem;font-weight:800}
     .field input,.field select,.field textarea{width:100%;min-height:48px;padding:11px 13px;border:1px solid #cbd1d8;border-radius:10px;background:#fff;color:var(--ink);font:inherit}
     .field textarea{min-height:96px;resize:vertical}
@@ -144,7 +144,7 @@
         <div class="field"><label for="name">お名前</label><input id="name" placeholder="例：山田" disabled></div>
         <div class="field"><label for="reply">ご連絡先（メールアドレスなど）</label><input id="reply" placeholder="メールアドレスor電話番号" disabled></div>
         <div class="field"><label for="bookingArea">作業場所（町名まで）</label><input id="bookingArea" placeholder="例：横浜市旭区二俣川" disabled></div>
-        <div class="field full"><div class="vehicle-fields"><div class="field"><label for="manufacturer">メーカー</label><select id="manufacturer"><option value="">選択してください</option><option value="toyota">トヨタ</option><option value="nissan">日産</option><option value="honda">ホンダ</option><option value="mazda">マツダ</option><option value="subaru">スバル</option><option value="mitsubishi">三菱</option><option value="suzuki">スズキ</option><option value="daihatsu">ダイハツ</option><option value="lexus">レクサス</option><option value="other">その他・輸入車</option></select></div><div class="field"><label for="carModel">車種</label><select id="carModel" disabled><option value="">メーカーを先に選択</option></select></div><div class="field"><label for="carType">車両形式（任意）</label><input id="carType" placeholder="例：DJ5FS"></div><div class="field full" id="customVehicleField" hidden><label for="customVehicle">メーカー・車種（手入力）</label><input id="customVehicle" placeholder="例：BMW 320i"></div></div></div>
+        <div class="field full"><div class="vehicle-fields"><div class="field"><label for="vehicleClass">車両区分</label><select id="vehicleClass"><option value="">選択してください</option><option value="kei">軽自動車</option><option value="compact">小型乗用車</option></select></div><div class="field"><label for="manufacturer">メーカー</label><select id="manufacturer" disabled><option value="">車両区分を先に選択</option></select></div><div class="field"><label for="carModel">車種</label><select id="carModel" disabled><option value="">メーカーを先に選択</option></select></div><div class="field"><label for="carType">車両形式</label><select id="carType" disabled><option value="">車種を先に選択</option></select></div><div class="field full" id="customVehicleField" hidden><label id="customVehicleLabel" for="customVehicle">車種（手入力）</label><input id="customVehicle" placeholder="車種を入力してください"></div><div class="field full" id="customTypeField" hidden><label for="customType">車両形式（手入力・任意）</label><input id="customType" placeholder="例：DJ5FS"></div></div></div>
         <div class="field"><label for="service">希望作業</label><select id="service" disabled><option>選択してください</option><option>エンジンオイル交換</option><option>バッテリー交換</option><option>ジャンプスタート</option><option>夏↔︎冬タイヤ交換（脱着）</option><option>タイヤ交換（組み換え）</option><option>タイヤローテーション</option><option>洗車</option></select></div>
         <div class="field"><label for="date">希望日時</label><input id="date" type="datetime-local"></div>
         <div class="field full"><label for="note">補足（任意）</label><textarea id="note" placeholder="タイヤサイズ、部品の準備状況など" disabled></textarea></div>
@@ -160,41 +160,152 @@
   </main>
   <footer><div class="wrap footer-row"><strong>横浜旭カーサービス</strong><small>横浜市旭区発の出張カーサービス</small></div></footer>
   <script>
-    const vehicleModels = {
-      toyota: ["アクア","プリウス","ヤリス","カローラ","ルーミー","シエンタ","ノア","ヴォクシー","アルファード","ヴェルファイア","ヴィッツ","パッソ","RAV4","ハリアー","ライズ","プロボックス","ハイエース"],
-      nissan: ["ノート","セレナ","エクストレイル","デイズ","ルークス","マーチ","キューブ","ジューク","キックス","リーフ"],
-      honda: ["フィット","フリード","ステップワゴン","N-BOX","N-WGN","N-ONE","ヴェゼル","シビック","シャトル","オデッセイ"],
-      mazda: ["デミオ","MAZDA2","アクセラ","MAZDA3","アテンザ","CX-3","CX-5","CX-30","MPV","ビアンテ","ロードスター"],
-      subaru: ["インプレッサ","レヴォーグ","フォレスター","XV","レガシィ","ステラ","ジャスティ"],
-      mitsubishi: ["eKワゴン","eKスペース","デリカD:2","デリカD:5","アウトランダー","RVR","ミラージュ"],
-      suzuki: ["ワゴンR","スペーシア","アルト","ハスラー","ジムニー","スイフト","ソリオ","エブリイ","ラパン","クロスビー"],
-      daihatsu: ["タント","ムーヴ","ミラ","タフト","ロッキー","トール","ウェイク","コペン","ハイゼット","ムーヴキャンバス"],
-      lexus: ["LS","ES","IS","RX","NX","UX","CT","LX"]
+    const vehicleCatalogue = {
+      kei: {
+        "スズキ": [
+          {name:"アルト", forms:["HA25S","HA35S","HA36S","HA37S","HA97S"]},
+          {name:"ワゴンR", forms:["MH23S","MH34S","MH35S","MH44S","MH55S","MH85S","MH95S"]},
+          {name:"スペーシア", forms:["MK32S","MK42S","MK53S","MK54S","MK94S"]},
+          {name:"ハスラー", forms:["MR31S","MR41S","MR52S","MR92S"]},
+          {name:"ジムニー", forms:["JB23W","JB64W"]}
+        ],
+        "ダイハツ": [
+          {name:"タント", forms:["L375S","L385S","LA600S","LA610S","LA650S","LA660S"]},
+          {name:"ムーヴ", forms:["L175S","L185S","LA100S","LA110S","LA150S","LA160S"]},
+          {name:"ミライース", forms:["LA300S","LA310S","LA350S","LA360S"]},
+          {name:"タフト", forms:["LA900S","LA910S"]}
+        ],
+        "ホンダ": [
+          {name:"N-BOX", forms:["JF1","JF2","JF3","JF4","JF5","JF6"]},
+          {name:"N-WGN", forms:["JH1","JH2","JH3","JH4"]},
+          {name:"N-ONE", forms:["JG1","JG2","JG3","JG4"]}
+        ],
+        "日産": [
+          {name:"デイズ", forms:["B21W","B43W","B44W","B45W","B46W","B47W","B48W"]},
+          {name:"ルークス", forms:["B21A","B44A","B45A","B47A","B48A"]}
+        ],
+        "三菱": [
+          {name:"eKワゴン", forms:["B11W","B33W","B36W","B37W","B38W"]},
+          {name:"eKスペース", forms:["B11A","B34A","B35A","B37A","B38A"]}
+        ],
+        "マツダ": [
+          {name:"キャロル", forms:["HB25S","HB35S","HB36S","HB37S"]},
+          {name:"フレア", forms:["MJ34S","MJ44S","MJ55S","MJ95S"]},
+          {name:"フレアワゴン", forms:["MM32S","MM42S","MM53S","MM94S"]}
+        ],
+        "スバル": [
+          {name:"ステラ", forms:["LA100F","LA110F","LA150F","LA160F"]}
+        ],
+        "トヨタ": [
+          {name:"ピクシス エポック", forms:["LA300A","LA310A","LA350A","LA360A"]}
+        ]
+      },
+      compact: {
+        "トヨタ": [
+          {name:"アクア", forms:["NHP10","MXPK10","MXPK11","MXPK15","MXPK16"]},
+          {name:"ヤリス", forms:["KSP210","MXPA10","MXPA15","MXPH10","MXPH15"]},
+          {name:"パッソ", forms:["KGC30","NGC30","M700A","M710A"]},
+          {name:"ルーミー", forms:["M900A","M910A"]},
+          {name:"ライズ", forms:["A200A","A201A","A202A","A210A"]}
+        ],
+        "日産": [
+          {name:"ノート", forms:["E11","E12","HE12","E13","SNE13"]},
+          {name:"マーチ", forms:["K13"]},
+          {name:"キューブ", forms:["Z12"]},
+          {name:"キックス", forms:["P15","P15改"]}
+        ],
+        "ホンダ": [
+          {name:"フィット", forms:["GD1","GD2","GE6","GE7","GE8","GE9","GK3","GK4","GK5","GK6","GP5","GP6","GR1","GR2","GR3","GR4","GR5","GR6","GR7","GR8"]}
+        ],
+        "マツダ": [
+          {name:"デミオ", forms:["DE3FS","DE5FS","DEJFS","DJ3FS","DJ5FS","DJLFS","DJLAS"]},
+          {name:"MAZDA2", forms:["DJLFS","DJLAS"]}
+        ],
+        "スズキ": [
+          {name:"スイフト", forms:["ZC11S","ZD11S","ZC72S","ZD72S","ZC83S","ZD83S","ZC53S","ZD53S","ZC33S"]},
+          {name:"ソリオ", forms:["MA15S","MA26S","MA36S","MA46S","MA37S","MA47S"]}
+        ],
+        "ダイハツ": [
+          {name:"トール", forms:["M900S","M910S"]},
+          {name:"ブーン", forms:["M700S","M710S"]}
+        ],
+        "三菱": [
+          {name:"ミラージュ", forms:["A05A","A03A"]}
+        ],
+        "スバル": [
+          {name:"ジャスティ", forms:["M900F","M910F"]}
+        ]
+      }
     };
+    const vehicleClass = document.getElementById("vehicleClass");
     const manufacturerSelect = document.getElementById("manufacturer");
     const modelSelect = document.getElementById("carModel");
+    const formSelect = document.getElementById("carType");
     const customVehicleField = document.getElementById("customVehicleField");
+    const customVehicleLabel = document.getElementById("customVehicleLabel");
     const customVehicleInput = document.getElementById("customVehicle");
+    const customTypeField = document.getElementById("customTypeField");
+    const resetSelect = (select, label) => {
+      select.replaceChildren(new Option(label, ""));
+      select.disabled = true;
+    };
+    const hideManualFields = () => {
+      customVehicleField.hidden = true;
+      customTypeField.hidden = true;
+      customVehicleInput.value = "";
+      document.getElementById("customType").value = "";
+    };
+    vehicleClass.addEventListener("change", () => {
+      resetSelect(manufacturerSelect, "メーカーを選択してください");
+      resetSelect(modelSelect, "メーカーを先に選択");
+      resetSelect(formSelect, "車種を先に選択");
+      hideManualFields();
+      const catalog = vehicleCatalogue[vehicleClass.value];
+      if (!catalog) return;
+      manufacturerSelect.disabled = false;
+      for (const maker of Object.keys(catalog)) manufacturerSelect.add(new Option(maker, maker));
+      manufacturerSelect.add(new Option("その他（手入力）", "__other__"));
+    });
     manufacturerSelect.addEventListener("change", () => {
-      const maker = manufacturerSelect.value;
-      modelSelect.replaceChildren();
-      customVehicleField.hidden = maker !== "other";
-      customVehicleInput.placeholder = maker === "other" ? "例：BMW 320i" : "車種を入力してください";
-      if (!maker || maker === "other") {
-        modelSelect.disabled = true;
-        modelSelect.add(new Option(maker === "other" ? "手入力をご利用ください" : "メーカーを先に選択", ""));
+      resetSelect(modelSelect, "車種を選択してください");
+      resetSelect(formSelect, "車種を先に選択");
+      hideManualFields();
+      if (manufacturerSelect.value === "__other__") {
+        modelSelect.add(new Option("車種を手入力", "__other__"));
+        customVehicleLabel.textContent = "メーカー・車種（手入力）";
+        customVehicleInput.placeholder = "メーカー名と車種を入力してください";
+        customVehicleField.hidden = false;
+        customTypeField.hidden = false;
         return;
       }
+      const catalog = vehicleCatalogue[vehicleClass.value] || {};
+      const models = catalog[manufacturerSelect.value] || [];
+      if (!models.length) return;
       modelSelect.disabled = false;
-      modelSelect.add(new Option("車種を選択してください", ""));
-      for (const model of vehicleModels[maker] || []) modelSelect.add(new Option(model, model));
+      for (const item of models) modelSelect.add(new Option(item.name, item.name));
       modelSelect.add(new Option("その他（手入力）", "__other__"));
     });
     modelSelect.addEventListener("change", () => {
-      const custom = modelSelect.value === "__other__";
-      customVehicleField.hidden = !custom;
-      customVehicleInput.placeholder = "車種を入力してください";
-      if (!custom) customVehicleInput.value = "";
+      resetSelect(formSelect, "車両形式を選択してください");
+      hideManualFields();
+      if (modelSelect.value === "__other__") {
+        customVehicleLabel.textContent = "車種（手入力）";
+        customVehicleInput.placeholder = "車種を入力してください";
+        customVehicleField.hidden = false;
+        customTypeField.hidden = false;
+        return;
+      }
+      const catalog = vehicleCatalogue[vehicleClass.value] || {};
+      const model = (catalog[manufacturerSelect.value] || []).find(item => item.name === modelSelect.value);
+      if (!model) return;
+      formSelect.disabled = false;
+      for (const form of model.forms) formSelect.add(new Option(form, form));
+      formSelect.add(new Option("その他・不明", "__other__"));
+    });
+    formSelect.addEventListener("change", () => {
+      const custom = formSelect.value === "__other__";
+      customTypeField.hidden = !custom;
+      if (!custom) document.getElementById("customType").value = "";
     });
   </script>
 </body>
