@@ -65,7 +65,7 @@
     .booking{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:clamp(24px,5vw,46px)}
     .booking-status{display:flex;align-items:center;gap:10px;background:#FFF8D8;border:1px solid #E8D36E;border-radius:12px;padding:13px 15px;color:#2C3D5E;font-weight:750;margin:24px 0 0}
     .status-dot{width:10px;height:10px;background:#D1A900;border-radius:50%;flex:none}
-    .form-preview{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+    .form-preview{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.vehicle-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}.vehicle-fields .field{min-width:0}.field[hidden]{display:none}
     .field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.9rem;font-weight:800}
     .field input,.field select,.field textarea{width:100%;min-height:48px;padding:11px 13px;border:1px solid #cbd1d8;border-radius:10px;background:#fff;color:var(--ink);font:inherit}
     .field textarea{min-height:96px;resize:vertical}
@@ -76,7 +76,7 @@
     summary{font-weight:850;cursor:pointer}details p{color:var(--muted);margin:10px 0 0;font-size:.94rem}
     footer{background:#041A43;color:#D0D9EA;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-row strong{color:#fff}.footer-row small{font-size:.8rem}
     @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:30px 28px 8px}.hero-visual{padding:10px 28px 28px;gap:12px}.hero-art{min-height:0;padding:0}.hero-actions{padding:0}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
-    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:24px 22px 8px}.hero-logo{width:min(280px,100%)}h1{font-size:2.6rem}.hero-visual{padding:8px 22px 24px;gap:12px}.hero-art{min-height:0;padding:0}.hero-photos{gap:10px}.hero-photo-card{border-radius:14px}.hero-actions{padding:0 22px 24px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:24px 22px 8px}.hero-logo{width:min(280px,100%)}h1{font-size:2.6rem}.hero-visual{padding:8px 22px 24px;gap:12px}.hero-art{min-height:0;padding:0}.hero-photos{gap:10px}.hero-photo-card{border-radius:14px}.hero-actions{padding:0 22px 24px}.cards,.steps,.form-preview,.vehicle-fields{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   </style>
 </head>
@@ -144,7 +144,7 @@
         <div class="field"><label for="name">お名前</label><input id="name" placeholder="例：山田" disabled></div>
         <div class="field"><label for="reply">ご連絡先（メールアドレスなど）</label><input id="reply" placeholder="メールアドレスor電話番号" disabled></div>
         <div class="field"><label for="bookingArea">作業場所（町名まで）</label><input id="bookingArea" placeholder="例：横浜市旭区二俣川" disabled></div>
-        <div class="field"><label for="car">車種（できれば車両形式も）</label><input id="car" placeholder="例：デミオ　DJ5FS" disabled></div>
+        <div class="field full"><div class="vehicle-fields"><div class="field"><label for="manufacturer">メーカー</label><select id="manufacturer"><option value="">選択してください</option><option value="toyota">トヨタ</option><option value="nissan">日産</option><option value="honda">ホンダ</option><option value="mazda">マツダ</option><option value="subaru">スバル</option><option value="mitsubishi">三菱</option><option value="suzuki">スズキ</option><option value="daihatsu">ダイハツ</option><option value="lexus">レクサス</option><option value="other">その他・輸入車</option></select></div><div class="field"><label for="carModel">車種</label><select id="carModel" disabled><option value="">メーカーを先に選択</option></select></div><div class="field"><label for="carType">車両形式（任意）</label><input id="carType" placeholder="例：DJ5FS"></div><div class="field full" id="customVehicleField" hidden><label for="customVehicle">メーカー・車種（手入力）</label><input id="customVehicle" placeholder="例：BMW 320i"></div></div></div>
         <div class="field"><label for="service">希望作業</label><select id="service" disabled><option>選択してください</option><option>エンジンオイル交換</option><option>バッテリー交換</option><option>ジャンプスタート</option><option>夏↔︎冬タイヤ交換（脱着）</option><option>タイヤ交換（組み換え）</option><option>タイヤローテーション</option><option>洗車</option></select></div>
         <div class="field"><label for="date">希望日時</label><input id="date" type="datetime-local"></div>
         <div class="field full"><label for="note">補足（任意）</label><textarea id="note" placeholder="タイヤサイズ、部品の準備状況など" disabled></textarea></div>
@@ -159,5 +159,43 @@
     </div></div></section>
   </main>
   <footer><div class="wrap footer-row"><strong>横浜旭カーサービス</strong><small>横浜市旭区発の出張カーサービス</small></div></footer>
+  <script>
+    const vehicleModels = {
+      toyota: ["アクア","プリウス","ヤリス","カローラ","ルーミー","シエンタ","ノア","ヴォクシー","アルファード","ヴェルファイア","ヴィッツ","パッソ","RAV4","ハリアー","ライズ","プロボックス","ハイエース"],
+      nissan: ["ノート","セレナ","エクストレイル","デイズ","ルークス","マーチ","キューブ","ジューク","キックス","リーフ"],
+      honda: ["フィット","フリード","ステップワゴン","N-BOX","N-WGN","N-ONE","ヴェゼル","シビック","シャトル","オデッセイ"],
+      mazda: ["デミオ","MAZDA2","アクセラ","MAZDA3","アテンザ","CX-3","CX-5","CX-30","MPV","ビアンテ","ロードスター"],
+      subaru: ["インプレッサ","レヴォーグ","フォレスター","XV","レガシィ","ステラ","ジャスティ"],
+      mitsubishi: ["eKワゴン","eKスペース","デリカD:2","デリカD:5","アウトランダー","RVR","ミラージュ"],
+      suzuki: ["ワゴンR","スペーシア","アルト","ハスラー","ジムニー","スイフト","ソリオ","エブリイ","ラパン","クロスビー"],
+      daihatsu: ["タント","ムーヴ","ミラ","タフト","ロッキー","トール","ウェイク","コペン","ハイゼット","ムーヴキャンバス"],
+      lexus: ["LS","ES","IS","RX","NX","UX","CT","LX"]
+    };
+    const manufacturerSelect = document.getElementById("manufacturer");
+    const modelSelect = document.getElementById("carModel");
+    const customVehicleField = document.getElementById("customVehicleField");
+    const customVehicleInput = document.getElementById("customVehicle");
+    manufacturerSelect.addEventListener("change", () => {
+      const maker = manufacturerSelect.value;
+      modelSelect.replaceChildren();
+      customVehicleField.hidden = maker !== "other";
+      customVehicleInput.placeholder = maker === "other" ? "例：BMW 320i" : "車種を入力してください";
+      if (!maker || maker === "other") {
+        modelSelect.disabled = true;
+        modelSelect.add(new Option(maker === "other" ? "手入力をご利用ください" : "メーカーを先に選択", ""));
+        return;
+      }
+      modelSelect.disabled = false;
+      modelSelect.add(new Option("車種を選択してください", ""));
+      for (const model of vehicleModels[maker] || []) modelSelect.add(new Option(model, model));
+      modelSelect.add(new Option("その他（手入力）", "__other__"));
+    });
+    modelSelect.addEventListener("change", () => {
+      const custom = modelSelect.value === "__other__";
+      customVehicleField.hidden = !custom;
+      customVehicleInput.placeholder = "車種を入力してください";
+      if (!custom) customVehicleInput.value = "";
+    });
+  </script>
 </body>
 </html>
