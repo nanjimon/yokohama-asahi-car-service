@@ -22,23 +22,24 @@
     nav a{text-decoration:none;color:var(--ink)}nav a:hover{color:#795d00}
     .nav-cta{background:var(--gold);color:var(--ink);padding:10px 17px;border-radius:999px}
     .hero{background:linear-gradient(125deg,#fff 0%,#f3faff 56%,#e5f4ff 100%);color:var(--ink);overflow:hidden}
-    .hero-grid{min-height:550px;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
-    .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:76px 40px 76px max(32px,calc((100vw - 1120px)/2))}
-    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:850;font-size:.88rem;letter-spacing:.09em}
+    .hero-grid{min-height:0;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;row-gap:0}
+    .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:34px 24px 22px max(32px,calc((100vw - 1120px)/2))}
+    .hero-logo{display:block;width:min(320px,82%);height:auto;margin:0 0 10px;background:#fff}
+    .hero-actions{grid-column:1/-1;padding:0 40px 28px max(32px,calc((100vw - 1120px)/2))}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:850;font-size:.96rem;letter-spacing:.04em}
     .eyebrow:before{content:"";width:30px;height:3px;border-radius:2px;background:currentColor}
-    h1{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-.045em;line-height:1.12;margin:20px 0}
+    h1{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-.045em;line-height:1.12;margin:14px 0}
     h1 span{color:var(--red)}
-    .lead{max-width:35em;color:#425c76;font-size:1.08rem;margin:0 0 28px}
+    .lead{max-width:35em;color:#425c76;font-size:1.08rem;margin:0}
     .actions{display:flex;flex-wrap:wrap;gap:12px}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:850;border:0;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 12px 28px #FFD40030}
     .btn-secondary{background:#fff;border:1px solid #c6d9eb;color:var(--ink)}
-    .hero-art{position:relative;min-height:460px;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:34px;background:radial-gradient(ellipse at 70% 45%,#d8eeff 0,#eaf6ff 44%,#f5fbff 82%)}
+    .hero-art{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:22px 34px 12px;background:none}
     .hero-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;position:relative;width:100%;z-index:1}
     .hero-photo-card{position:relative;aspect-ratio:4/3;margin:0;overflow:hidden;border:1px solid #fff;border-radius:20px;background:#dcecf8;box-shadow:0 16px 34px #06265f24}
     .hero-photo-card img{display:block;width:100%;height:100%;object-fit:cover}
-    .art-label{align-self:flex-end;background:#fff;border:1px solid #c6d9eb;color:var(--ink);padding:8px 14px;border-radius:999px;font-size:.78rem;font-weight:750}
     section{padding:86px 0}
     .kicker{color:var(--ink2);font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin-bottom:8px}
     h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.035em;line-height:1.2;margin:0 0 14px}
@@ -73,8 +74,8 @@
     details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
     summary{font-weight:850;cursor:pointer}details p{color:var(--muted);margin:10px 0 0;font-size:.94rem}
     footer{background:#041A43;color:#D0D9EA;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-row strong{color:#fff}.footer-row small{font-size:.8rem}
-    @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:62px 28px 42px}.hero-art{min-height:320px}.hero-art:before{width:72vw}.hero-art:after{width:52vw}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
-    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:52px 22px 36px}h1{font-size:2.6rem}.hero-art{min-height:275px}.art-label{bottom:14px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+    @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:30px 28px 8px}.hero-art{min-height:0;padding:10px 28px 14px}.hero-actions{padding:0 28px 28px}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:24px 22px 8px}.hero-logo{width:min(280px,100%)}h1{font-size:2.6rem}.hero-art{min-height:0;padding:8px 22px 14px}.hero-photos{gap:10px}.hero-photo-card{border-radius:14px}.hero-actions{padding:0 22px 24px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   </style>
 </head>
@@ -89,18 +90,18 @@
     <section class="hero" id="top">
       <div class="hero-grid">
         <div class="hero-copy">
+          <img class="hero-logo" src="assets/yokohama-asahi-car-service-logo.webp" alt="横浜旭カーサービス">
           <div class="eyebrow">横浜市旭区発の出張カーサービス</div>
           <h1>車の軽作業を、<br><span>ご自宅で。</span></h1>
           <p class="lead">店舗の予約が取りづらいときや、在宅ワーク中、休日のお出かけ前に。ご自宅などの駐車場へ伺い、オイル交換やタイヤ交換を行います。夜間もご相談ください。</p>
-          <div class="actions"><a class="btn btn-primary" href="#booking">予約申し込み</a><a class="btn btn-secondary" href="#services">サービス・料金を見る</a></div>
         </div>
         <div class="hero-art" aria-label="ご自宅の駐車場でのカーサービス">
           <div class="hero-photos">
             <figure class="hero-photo-card"><img src="assets/oil-change-liquid.jpg" alt="オイルジョッキからエンジンへ新しいオイルを注ぐ様子" loading="lazy" decoding="async"></figure>
             <figure class="hero-photo-card"><img src="assets/tire-change-work.jpg" alt="車からホイール付きタイヤを外す作業" loading="lazy" decoding="async"></figure>
           </div>
-          <span class="art-label">ご自宅の駐車場で作業</span>
         </div>
+        <div class="hero-actions actions"><a class="btn btn-primary" href="#booking">予約申し込み</a><a class="btn btn-secondary" href="#services">サービス・料金を見る</a></div>
       </div>
     </section>
 
@@ -111,8 +112,8 @@
         <div class="cards">
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3C13.5 8 7 14.3 7 20a9 9 0 0 0 18 0c0-5.7-6.5-12-9-17Z"/><path d="M12 21.5c.5 1.7 1.8 2.7 3.6 3"/></svg></div><h3>エンジンオイル交換</h3><p>軽自動車・小型乗用車のみ対応。基本上抜きで行います。下抜き作業になった場合も、養生をしっかり行います。オイルフィルター交換とフラッシング作業はありません。</p><div class="price"><strong>3,000円〜</strong><small>車種・油種により変動</small></div></article>
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="9" width="22" height="16" rx="2"/><path d="M10 9V6h4v3M19 9V6h4v3M10 17h6M13 14v6M20 17h4"/></svg></div><h3>バッテリー交換・ジャンプスタート</h3><p>持込みバッテリーの交換、取り外したバッテリーの処分、バッテリー上がり時のジャンプスタートに対応します。</p><div class="price"><strong>3,000円〜</strong><small>交換時は廃棄込み</small></div></article>
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4"/><path d="M16 5v7M16 20v7M5 16h7M20 16h7"/></svg></div><h3>夏↔︎冬タイヤ交換</h3><p>ホイール付きタイヤの脱着。摩耗状況を見てローテーションも致します。</p><div class="price"><strong>3,000円</strong><small>4本</small></div></article>
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="4"/><path d="M16 5v7M16 20v7M5 16h7M20 16h7"/></svg></div><h3>タイヤ交換（組み換え）</h3><p>タイヤとホイールの組み換え、バランス調整、廃タイヤ処理を行います。タイヤはお預かりして作業し、納品時にお車へ付け替えます。</p><p class="price-note">※16インチまで。偏平率の低いタイヤ、引っ張りタイヤは不可。</p><div class="price"><strong>8,000円〜</strong></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="7" cy="22" r="5.2"/><circle cx="7" cy="22" r="2"/><circle cx="25" cy="22" r="5.2"/><circle cx="25" cy="22" r="2"/><circle cx="7" cy="7" r="2.2"/><path d="M7 2.8v1.5M7 9.7v1.5M2.8 7h1.5M9.7 7h1.5M25 3v8M21 7h8M22.2 4.2l5.6 5.6M27.8 4.2l-5.6 5.6M13.5 20h5M17 18.5l1.5 1.5-1.5 1.5"/></svg></div><h3>夏↔︎冬タイヤ交換（脱着）</h3><p>ホイール付きタイヤの脱着。摩耗状況を見てローテーションも致します。</p><div class="price"><strong>3,000円</strong><small>4本</small></div></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="7" cy="16" r="5.5"/><circle cx="7" cy="16" r="3.1"/><circle cx="25" cy="16" r="5.5"/><circle cx="25" cy="16" r="1.4"/><path d="M25 10.5V14M25 18v3.5M19.5 16h-6M15.5 14 13.5 16l2 2M25 13l2 3-2 3M7 10.5v2M7 19.5v2M1.5 16h2M10.5 16h2"/></svg></div><h3>タイヤ交換（組み換え）</h3><p>タイヤとホイールの組み換え、バランス調整、廃タイヤ処理を行います。タイヤはお預かりして作業し、納品時にお車へ付け替えます。</p><p class="price-note">※16インチまで。偏平率の低いタイヤ、引っ張りタイヤは不可。</p><div class="price"><strong>8,000円〜</strong></div></article>
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 9a10 10 0 0 1 16 2M23 6l1 5-5-1M24 23a10 10 0 0 1-16-2M9 26l-1-5 5 1"/></svg></div><h3>タイヤローテーション</h3><p>前後のタイヤ位置を入れ替え、偏った摩耗を抑えます。</p><div class="price"><strong>3,000円</strong></div></article>
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 20c4 3 12 3 16 0M10 17c3 2 9 2 12 0M12 14c2 1 6 1 8 0M7 24h18M11 9h10"/></svg></div><h3>洗車</h3><p>ご自宅や指定場所での簡易洗車。内容はご相談ください。</p><div class="price"><strong>要相談</strong></div></article>
         </div>
@@ -126,7 +127,7 @@
           <article class="step"><div class="step-number">1</div><h3>申し込み</h3><p>作業内容・車種・地域・希望日時を送信。</p></article>
           <article class="step"><div class="step-number">2</div><h3>内容確認</h3><p>作業可否、駐車環境、料金を確認します。</p></article>
           <article class="step"><div class="step-number">3</div><h3>日時確定</h3><p>返信で日時と料金を確認して予約確定。</p></article>
-          <article class="step"><div class="step-number">4</div><h3>現地で作業</h3><p>安全を確認し、ご指定場所で作業します。</p></article>
+          <article class="step"><div class="step-number">4</div><h3>現地で作業</h3><p>ご指定の場所で作業します。</p></article>
         </div>
       </div>
     </section>
@@ -142,7 +143,7 @@
         <div class="field"><label for="reply">返信先（メールアドレスなど）</label><input id="reply" placeholder="返信を受け取れる連絡先" disabled></div>
         <div class="field"><label for="bookingArea">作業場所（町名まで）</label><input id="bookingArea" placeholder="例：横浜市旭区二俣川" disabled></div>
         <div class="field"><label for="car">車種</label><input id="car" placeholder="例：ダイハツ タント" disabled></div>
-        <div class="field"><label for="service">希望作業</label><select id="service" disabled><option>選択してください</option><option>エンジンオイル交換</option><option>バッテリー交換</option><option>ジャンプスタート</option><option>夏↔︎冬タイヤ交換</option><option>タイヤ交換（組み換え）</option><option>タイヤローテーション</option><option>洗車</option></select></div>
+        <div class="field"><label for="service">希望作業</label><select id="service" disabled><option>選択してください</option><option>エンジンオイル交換</option><option>バッテリー交換</option><option>ジャンプスタート</option><option>夏↔︎冬タイヤ交換（脱着）</option><option>タイヤ交換（組み換え）</option><option>タイヤローテーション</option><option>洗車</option></select></div>
         <div class="field"><label for="date">希望日時（第1希望）</label><input id="date" placeholder="例：10月20日 午前" disabled></div>
         <div class="field full"><label for="note">補足（任意）</label><textarea id="note" placeholder="タイヤサイズ、部品の準備状況など" disabled></textarea></div>
       </div>
