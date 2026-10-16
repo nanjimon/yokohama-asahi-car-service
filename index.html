@@ -25,7 +25,8 @@
     .hero-grid{min-height:0;display:grid;grid-template-columns:1.05fr .95fr;align-items:start;row-gap:0}
     .hero-copy{display:flex;flex-direction:column;justify-content:flex-start;padding:34px 24px 22px max(32px,calc((100vw - 1120px)/2))}
     .hero-logo{display:block;width:min(320px,82%);height:auto;margin:0 0 10px;background:#fff}
-    .hero-actions{grid-column:1/-1;padding:0 40px 28px max(32px,calc((100vw - 1120px)/2))}
+    .hero-visual{display:flex;flex-direction:column;gap:14px;padding:34px 34px 24px 12px}
+    .hero-actions{padding:0}
     .eyebrow{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:850;font-size:.96rem;letter-spacing:.04em}
     .eyebrow:before{content:"";width:30px;height:3px;border-radius:2px;background:currentColor}
     h1{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-.045em;line-height:1.12;margin:14px 0}
@@ -36,7 +37,7 @@
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 12px 28px #FFD40030}
     .btn-secondary{background:#fff;border:1px solid #c6d9eb;color:var(--ink)}
-    .hero-art{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:22px 34px 12px;background:none}
+    .hero-art{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:0;background:none}
     .hero-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;position:relative;width:100%;z-index:1}
     .hero-photo-card{position:relative;aspect-ratio:4/3;margin:0;overflow:hidden;border:1px solid #fff;border-radius:20px;background:#dcecf8;box-shadow:0 16px 34px #06265f24}
     .hero-photo-card img{display:block;width:100%;height:100%;object-fit:cover}
@@ -74,8 +75,8 @@
     details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
     summary{font-weight:850;cursor:pointer}details p{color:var(--muted);margin:10px 0 0;font-size:.94rem}
     footer{background:#041A43;color:#D0D9EA;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-row strong{color:#fff}.footer-row small{font-size:.8rem}
-    @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:30px 28px 8px}.hero-art{min-height:0;padding:10px 28px 14px}.hero-actions{padding:0 28px 28px}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
-    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:24px 22px 8px}.hero-logo{width:min(280px,100%)}h1{font-size:2.6rem}.hero-art{min-height:0;padding:8px 22px 14px}.hero-photos{gap:10px}.hero-photo-card{border-radius:14px}.hero-actions{padding:0 22px 24px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+    @media(max-width:860px){nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:30px 28px 8px}.hero-visual{padding:10px 28px 28px;gap:12px}.hero-art{min-height:0;padding:0}.hero-actions{padding:0}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.area-panel{grid-template-columns:1fr}.faq{grid-template-columns:1fr}}
+    @media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:.88rem}.brand small{font-size:.62rem}.nav-cta{padding:8px 12px;font-size:.8rem}.hero-copy{padding:24px 22px 8px}.hero-logo{width:min(280px,100%)}h1{font-size:2.6rem}.hero-visual{padding:8px 22px 24px;gap:12px}.hero-art{min-height:0;padding:0}.hero-photos{gap:10px}.hero-photo-card{border-radius:14px}.hero-actions{padding:0 22px 24px}.cards,.steps,.form-preview{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:64px 0}.card{padding:22px}.area-panel{padding:24px}.footer-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   </style>
 </head>
@@ -95,13 +96,15 @@
           <h1>車の軽作業を、<br><span>ご自宅で。</span></h1>
           <p class="lead">店舗の予約が取りづらいときや、在宅ワーク中、休日のお出かけ前に。ご自宅などの駐車場へ伺い、オイル交換やタイヤ交換を行います。夜間もご相談ください。</p>
         </div>
-        <div class="hero-art" aria-label="ご自宅の駐車場でのカーサービス">
-          <div class="hero-photos">
-            <figure class="hero-photo-card"><img src="assets/oil-change-liquid.jpg" alt="オイルジョッキからエンジンへ新しいオイルを注ぐ様子" loading="lazy" decoding="async"></figure>
-            <figure class="hero-photo-card"><img src="assets/tire-change-work.jpg" alt="車からホイール付きタイヤを外す作業" loading="lazy" decoding="async"></figure>
+        <div class="hero-visual">
+          <div class="hero-art" aria-label="ご自宅の駐車場でのカーサービス">
+            <div class="hero-photos">
+              <figure class="hero-photo-card"><img src="assets/oil-change-liquid.jpg" alt="オイルジョッキからエンジンへ新しいオイルを注ぐ様子" loading="lazy" decoding="async"></figure>
+              <figure class="hero-photo-card"><img src="assets/tire-change-work.jpg" alt="車からホイール付きタイヤを外す作業" loading="lazy" decoding="async"></figure>
+            </div>
           </div>
+          <div class="hero-actions actions"><a class="btn btn-primary" href="#booking">予約申し込み</a><a class="btn btn-secondary" href="#services">サービス・料金を見る</a></div>
         </div>
-        <div class="hero-actions actions"><a class="btn btn-primary" href="#booking">予約申し込み</a><a class="btn btn-secondary" href="#services">サービス・料金を見る</a></div>
       </div>
     </section>
 
